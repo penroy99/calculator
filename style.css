@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./imgs/white-grey.png');
+    background-size: cover;
+}
+
+#chassis {
+    display: flex;
+    flex-direction: column;
+
+    background-color: black;
+    min-width: 400px;
+    min-height: 600px;
+    color: white;
+    padding: 20px;
+}
+
+#chassis, #chassis > * {
+    border-radius: 10px;
+}
+
+#display {
+    background-color: white;
+    padding: 20px;
+}
