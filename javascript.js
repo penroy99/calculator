@@ -10,18 +10,31 @@ function operate(first, operator, last) {
     return mathFunctions[operator](first, last)
 }
 
+let firstNum = 0;
+let operator = '';
+let secondNum = 0;
+
+
 const displayScreen = document.querySelector('#display');
 const numbers = document.querySelectorAll('#num');
 
-numbers.forEach((number) => {
+/* numbers.forEach((number) => {
     number.addEventListener('click', () => {
         displayScreen.textContent += number.textContent;
+        firstNum += number.textContent;
     })
-})
+}); */
 
 document.addEventListener('keydown', (e) => {
     const name = e.key;
-    if (name >= 0 || name === ".") {
+    if (name >= 0) {
         displayScreen.textContent += name;
+        firstNum += name;
+        console.log(firstNum)
+    } else if (name in mathFunctions) {
+        operator = name;
+        console.log(operator)
     }
+    
 }, false);
+
