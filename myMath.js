@@ -10,3 +10,10 @@ function operate(first, operator, last) {
     return mathFunctions[operator](first, last)
 }
 
+// Add event listener on keydown
+document.addEventListener('keydown', (event) => {
+    var name = event.key;
+    var code = event.code;
+    // Alert the key name and key code on keydown
+    alert(`Key pressed ${name} \r\n Key code value: ${code}`);
+  }, false);

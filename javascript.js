@@ -15,8 +15,13 @@ const numbers = document.querySelectorAll('#num');
 
 numbers.forEach((number) => {
     number.addEventListener('click', () => {
-        displayScreen.textContent = 'a Number was pressed';
+        displayScreen.textContent += number.textContent;
     })
 })
 
-console.log(numbers)
+document.addEventListener('keydown', (e) => {
+    const name = e.key;
+    if (name >= 0 || name === ".") {
+        displayScreen.textContent += name;
+    }
+}, false);
