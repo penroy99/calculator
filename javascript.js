@@ -9,3 +9,14 @@ const mathFunctions = {
 function operate(first, operator, last) {
     return mathFunctions[operator](first, last)
 }
+
+const displayScreen = document.querySelector('#display');
+const numbers = document.querySelectorAll('#num');
+
+numbers.forEach((number) => {
+    number.addEventListener('click', () => {
+        displayScreen.textContent = 'a Number was pressed';
+    })
+})
+
+console.log(numbers)

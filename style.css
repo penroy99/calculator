@@ -1,3 +1,8 @@
+* {
+    font-family: monospace;
+    border-radius: 10px;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -9,19 +14,76 @@ body {
 #chassis {
     display: flex;
     flex-direction: column;
-
     background-color: black;
     min-width: 400px;
-    min-height: 600px;
-    color: white;
     padding: 20px;
-}
-
-#chassis, #chassis > * {
-    border-radius: 10px;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 #display {
     background-color: white;
+    color: lightgrey;
     padding: 20px;
+    font-size: 32px;
+}
+
+.rows {
+    flex: 1;
+    padding: 0%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 7.5px;
+}
+
+.row > button {
+    flex: 1;
+    padding: 20px;
+    border: 0px;
+    cursor: pointer;
+    background-color: white;
+    font-size: 32px;
+}
+
+#equals {
+    flex-grow: 2;
+    background: lightblue;
+}
+
+#equals:hover {
+    background-color: rgb(141, 215, 239);
+}
+
+#num {
+    background-color: lightgrey;
+}
+
+#num:hover {
+    background-color: rgb(160, 160, 160);
+
+}
+
+#operator {
+    background-color: #f6d8ac;
+}
+
+#operator:hover {
+    background-color: #ffd89d;
+}
+
+#clear {
+    border: 2px solid white;
+}
+
+#clear:hover {
+    background-color: black;
+    color: white;
 }

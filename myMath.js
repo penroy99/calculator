@@ -9,3 +9,4 @@ const mathFunctions = {
 function operate(first, operator, last) {
     return mathFunctions[operator](first, last)
 }
+
