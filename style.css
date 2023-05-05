@@ -73,11 +73,11 @@ body {
 
 }
 
-#operator {
+.operator {
     background-color: #f6d8ac;
 }
 
-#operator:hover {
+.operator:hover {
     background-color: #ffd89d;
 }
 
