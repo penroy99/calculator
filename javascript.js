@@ -31,7 +31,7 @@ document.addEventListener('keydown', (e) => {
         }
         displayScreen.textContent += name;
         firstNum += name;
-    } else if (name in mathFunctions && firstNum != null) {
+    } else if (name in mathFunctions && firstNum != null && secondNum === null) {
         operator = name;
     } else if (name >= 0) {
         if (secondNum === null) {
@@ -44,6 +44,11 @@ document.addEventListener('keydown', (e) => {
         firstNum = operate(operator, firstNum, secondNum);
         secondNum = null;
         operator = null;
+        displayScreen.textContent = firstNum;
+    } else if (name in mathFunctions && firstNum != null && secondNum != null) {
+        firstNum = operate(operator, firstNum, secondNum);
+        secondNum = null;
+        operator = name;
         displayScreen.textContent = firstNum;
     }
 }, false);
@@ -61,7 +66,7 @@ buttons.forEach((button) => {
             }
             displayScreen.textContent += btn;
             firstNum += btn;
-        } else if (btn in mathFunctions && firstNum != null) {
+        } else if (btn in mathFunctions && firstNum != null && secondNum === null) {
             operator = btn;
         } else if (btn >= 0) {
             if (secondNum === null) {
@@ -72,6 +77,13 @@ buttons.forEach((button) => {
             secondNum += btn;
         } else if (btn === '=' && (firstNum != null && secondNum != null)) {
             firstNum = operate(operator, firstNum, secondNum);
+            secondNum = null;
+            operator = null;
+            displayScreen.textContent = firstNum;
+        } else if (btn in mathFunctions && firstNum != null && secondNum != null) {
+            firstNum = operate(operator, firstNum, secondNum);
+            secondNum = null;
+            operator = btn;
             displayScreen.textContent = firstNum;
         }
     })
